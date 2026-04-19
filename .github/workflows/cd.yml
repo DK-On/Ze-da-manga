@@ -1,0 +1,12 @@
+name: CD Pipeline
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simular Deploy
+        run: echo "Deploy executado com sucesso no ambiente de produção!"
