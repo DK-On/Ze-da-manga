@@ -1,2 +1,1 @@
-console.log('Script rodando com sucesso e CI/CD aprovado!');
-
+console.log("Projeto Ze da Manga rodando perfeitamente!");
