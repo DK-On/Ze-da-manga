@@ -17,8 +17,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Rodar o script
-        run: node script.js
+      - name: Instalar dependências
+        run: npm install
+      - name: Rodar testes unitários
+        run: npm test
 
   deploy:
     needs: build
