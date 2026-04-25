@@ -13,8 +13,19 @@ jobs:
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4
+feature/testes-da-manga
       - name: Rodar os testes
         run: echo "Testes do CI aprovados com sucesso!"
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Instalar dependências
+        run: npm install
+      - name: Rodar testes unitários
+        run: npm test
+main
 
   deploy:
     needs: build
@@ -22,6 +33,7 @@ jobs:
     steps:
       - name: Simular Deploy
         run: echo "Deploy executado com sucesso!"
+feature/testes-da-manga
       - name: Notificar Discord
         uses: sarisia/actions-status-discord@v1
         if: always() # Garante que envia alerta mesmo se o teste falhar
@@ -29,3 +41,4 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           content: "Opa Daniel! O Workflow do Zé da Manga acabou de rodar."
           title: "Status do Build"
+main
