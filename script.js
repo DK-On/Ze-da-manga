@@ -1,2 +1,1 @@
-console.log('Iniciando o projeto') 
-const status = ativo 
+console.log("Projeto Ze da Manga rodando perfeitamente!");

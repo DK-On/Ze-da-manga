@@ -28,3 +28,10 @@ jobs:
     steps:
       - name: Simular Deploy
         run: echo "Deploy executado com sucesso!"
+      - name: Notificar Discord
+        uses: sarisia/actions-status-discord@v1
+        if: always() # Garante que envia alerta mesmo se o teste falhar
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          content: "Opa Daniel! O Workflow do Zé da Manga acabou de rodar."
+          title: "Status do Build"
